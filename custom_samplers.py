@@ -206,3 +206,28 @@ class SamplerDistanceAdvanced:
         sampler = comfy.samplers.KSAMPLER(
             distance_wrap(resample=resample,cfgpp=cfgpp,resample_end=resample_end))
         return (sampler, )
+
+class SamplerDistanceAdvancedFull:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": {"resample": ("INT", {"default": 3, "min": -1, "max": 32, "step": 1,
+                                                  "tooltip":"0 all along gives Euler. 1 gives Heun.\nAnything starting from 2 will use the distance method.\n-1 will do remaining steps + 1 as the resample value. This can be pretty slow."}),
+                             "resample_end": ("INT", {"default": -1, "min": -1, "max": 32, "step": 1, "tooltip":"How many resamples for the end. -1 means constant."}),
+                             "cfgpp" : ("BOOLEAN", {"default": True}),
+                             "sharpen" :  ("BOOLEAN", {"default": False}),
+                             "use_softmax" :  ("BOOLEAN", {"default": False}),
+                             "first_only" :  ("BOOLEAN", {"default": False}),
+                             "use_slerp" :  ("BOOLEAN", {"default": False}),
+                             "perp_step" :  ("BOOLEAN", {"default": False}),
+                             "smooth" :  ("BOOLEAN", {"default": False}),
+                             "use_negative" :  ("BOOLEAN", {"default": False}),
+                             }}
+    RETURN_TYPES = ("SAMPLER",)
+    CATEGORY = "sampling/custom_sampling/samplers"
+    FUNCTION = "get_sampler"
+
+    def get_sampler(self,resample,resample_end,cfgpp,sharpen,use_softmax,first_only,use_slerp,perp_step,smooth,use_negative):
+        sampler = comfy.samplers.KSAMPLER(
+            distance_wrap(resample=resample,resample_end=resample_end,cfgpp=cfgpp,sharpen=sharpen,use_softmax=use_softmax,first_only=first_only,use_slerp=use_slerp,perp_step=perp_step,smooth=smooth,use_negative=use_negative))
+
+        return (sampler, )

@@ -1,4 +1,4 @@
-from .custom_samplers import SamplerDistanceAdvanced
+from .custom_samplers import SamplerDistanceAdvanced,SamplerDistanceAdvancedFull
 from .presets_to_add import extra_samplers
 
 def add_samplers():
@@ -22,4 +22,5 @@ add_samplers()
 
 NODE_CLASS_MAPPINGS = {
     "SamplerDistance": SamplerDistanceAdvanced,
+    "SamplerDistanceFull": SamplerDistanceAdvancedFull,
 }
