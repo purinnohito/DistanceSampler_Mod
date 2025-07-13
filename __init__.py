@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from .custom_samplers import SamplerDistanceAdvanced,SamplerDistanceAdvancedFull
-=======
-from .custom_samplers import SamplerDistance, SamplerDistanceAdvanced
->>>>>>> dc67059db139924aae2d6b5da1e81e9e15e5995d
+from .custom_samplers import SamplerDistance, SamplerDistanceAdvanced,SamplerDistanceAdvancedFull
 from .presets_to_add import extra_samplers
 
 def add_samplers():
