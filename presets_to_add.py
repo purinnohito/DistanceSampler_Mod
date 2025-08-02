@@ -33,8 +33,8 @@ extra_samplers["Distance_p"] = distance_wrap(resample=3,resample_end=1,cfgpp=Fal
 # extra_samplers["heun_test"] = distance_wrap(resample=1,resample_end=1)
 extra_samplers["Distance_fast"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False)
 extra_samplers["Distance_fast_n"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,use_negative=True)
-extra_samplers["Distance_fast_1stOnly"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,first_only=True)
-extra_samplers["Distance_fast_1stOnly_n"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,first_only=True,use_negative=True)
+extra_samplers["Distance_fast_1stOnly"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,distance_first=0, distance_last=1)
+extra_samplers["Distance_fast_1stOnly_n"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,distance_first=0, distance_last=1,use_negative=True)
 # extra_samplers["Distance_fast_slerp"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,use_slerp=True)
 # extra_samplers["Distance_fast_slerp_n"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,use_slerp=True,use_negative=True)
 # extra_samplers["Distance_fast_slerp_p"] = distance_wrap(resample=3,resample_end=1,cfgpp=False,sharpen=False,use_slerp=True,perp_step=True)
@@ -50,4 +50,3 @@ extra_samplers["Distance_fast_1stOnly_n"] = distance_wrap(resample=3,resample_en
 # extra_samplers["distance_step_cfg_pp"] = distance_wrap(resample=-1,resample_end=1,cfgpp=True)
 extra_samplers["euler_cfg_pp_alt"] = distance_wrap(resample=0,cfgpp=True)
 extra_samplers["heun_cfg_pp"] = distance_wrap(resample=1,cfgpp=True)
-
