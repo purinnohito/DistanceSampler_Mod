@@ -50,3 +50,4 @@ extra_samplers["Distance_fast_1stOnly_n"] = distance_wrap(resample=3,resample_en
 # extra_samplers["distance_step_cfg_pp"] = distance_wrap(resample=-1,resample_end=1,cfgpp=True)
 extra_samplers["euler_cfg_pp_alt"] = distance_wrap(resample=0,cfgpp=True)
 extra_samplers["heun_cfg_pp"] = distance_wrap(resample=1,cfgpp=True)
+
